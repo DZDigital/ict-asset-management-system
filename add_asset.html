@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Asset</title>
+<style>
+body{
+font-family:Arial;
+background:#f4f6f9;
+padding:30px;
+}
+
+.container{
+background:white;
+padding:25px;
+max-width:700px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#0d6efd;
+text-align:center;
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#0d6efd;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#084298;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add New ICT Asset</h2>
+
+<form>
+
+<label>Asset Name</label>
+<input type="text" placeholder="Enter Asset Name">
+
+<label>Category</label>
+<select>
+<option>Computer</option>
+<option>Printer</option>
+<option>Router</option>
+<option>Switch</option>
+<option>Server</option>
+</select>
+
+<label>Serial Number</label>
+<input type="text" placeholder="Enter Serial Number">
+
+<label>Purchase Date</label>
+<input type="date">
+
+<label>Warranty End Date</label>
+<input type="date">
+
+<label>Location</label>
+<input type="text" placeholder="Asset Location">
+
+<button>Add Asset</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

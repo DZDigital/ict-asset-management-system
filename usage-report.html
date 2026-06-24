@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>ICT Asset Management System - Usage Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background: #0d6efd;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background: #0b5ed7;
+        }
+
+        .card-box {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .active-box { background: #198754; }
+        .expiring-box { background: #ffc107; color: black; }
+        .expired-box { background: #dc3545; }
+
+        .main {
+            padding: 20px;
+        }
+
+        table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+      <!-- SIDEBAR -->
+<div class="col-md-2 sidebar">
+    <h2>ICT Asset Management</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+<a href="add_asset.html">Add Asset</a>
+<a href="maintenance.html">Maintenance</a>
+<a href="warranty_dashboard.html">Warranty</a>
+<a href="usage-report.html">Usage Reports</a>
+<a href="login.html">Logout</a>
+</div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="col-md-10 main">
+
+            <h3>Usage Reports Dashboard</h3>
+           <p>Generate and view reports on ICT asset utilization and status.</p>
+
+            <!-- SUMMARY CARDS -->
+            <div class="row mb-4">
+
+                <div class="col-md-4">
+                    <div class="card-box active-box">
+                       <h5>Total Assets</h5>
+<h2>20</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-box expiring-box">
+                      <h5>Active Assets</h5>
+<h2>15</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-box expired-box">
+                       <h5>Under Maintenance</h5>
+<h2>3</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TABLE -->
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Asset Name</th>
+                        <th>Category</th>
+                       <th>Last Used</th>
+<th>Usage Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+    <tr>
+        <td>Dell Laptop</td>
+        <td>Computer</td>
+        <td>2026-08-01</td>
+        <td><span class="badge bg-success">Active</span></td>
+    </tr>
+
+    <tr>
+        <td>HP Printer</td>
+        <td>Printer</td>
+        <td>2026-07-15</td>
+        <td><span class="badge bg-warning text-dark">Low Usage</span></td>
+    </tr>
+
+    <tr>
+        <td>Cisco Router</td>
+        <td>Networking</td>
+        <td>2026-08-05</td>
+        <td><span class="badge bg-success">Active</span></td>
+    </tr>
+</tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
