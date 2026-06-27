@@ -1,15 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Maintenance Tracking</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>ICT Asset Management System - Maintenance Tracking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background: #0d6efd;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background: #0b5ed7;
+        }
+
+        .card-box {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .completed-box {
+            background: #198754;
+        }
+
+        .progress-box {
+            background: #ffc107;
+            color: black;
+        }
+
+        .pending-box {
+            background: #dc3545;
+        }
+
+        .main {
+            padding: 20px;
+        }
+
+        table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Maintenance Tracking</h1>
-<p>This page is under development.</p>
+<div class="container-fluid">
+    <div class="row">
 
-<a href="dashboard.html">Back to Dashboard</a>
+        <!-- SIDEBAR -->
+        <div class="col-md-2 sidebar">
+            <h2>ICT Asset Management</h2>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="add_asset.html">Add Asset</a>
+            <a href="maintenance.html">Maintenance</a>
+            <a href="warranty_dashboard.html">Warranty</a>
+            <a href="usage-report.html">Usage Reports</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="col-md-10 main">
+
+            <h3>Maintenance Tracking</h3>
+            <p>Monitor and manage ICT asset maintenance activities.</p>
+
+            <div class="row mb-4">
+
+                <div class="col-md-4">
+                    <div class="card-box completed-box">
+                        <h5>Completed Maintenance</h5>
+                        <h2>12</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-box progress-box">
+                        <h5>Assets Under Maintenance</h5>
+                        <h2>3</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-box pending-box">
+                        <h5>Pending Requests</h5>
+                        <h2>2</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Asset Name</th>
+                        <th>Issue</th>
+                        <th>Date Reported</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Dell Laptop</td>
+                        <td>Battery Fault</td>
+                        <td>2026-08-01</td>
+                        <td><span class="badge bg-warning text-dark">In Progress</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>HP Printer</td>
+                        <td>Paper Jam</td>
+                        <td>2026-08-03</td>
+                        <td><span class="badge bg-success">Completed</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Cisco Router</td>
+                        <td>Network Failure</td>
+                        <td>2026-08-05</td>
+                        <td><span class="badge bg-danger">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
