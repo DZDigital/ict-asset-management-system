@@ -84,9 +84,9 @@
 
     <div class="col-md-4">
         <div class="card-box active-box">
-            <h5>Total Assets</h5>
-            <h2>20</h2>
-        </div>
+    <h5>Total Assets</h5>
+    <h2 id="totalAssets">0</h2>
+</div>
     </div>
 
     <div class="col-md-4">
@@ -113,36 +113,34 @@
 <th>Category</th>
 <th>Location</th>
 <th>Status</th>
-                    </tr>
-                </thead>
-
-                    <tbody>
-    <tr>
-        <td>Dell Laptop</td>
-        <td>Computer</td>
-        <td>ICT Office</td>
-        <td><span class="badge bg-success">Active</span></td>
-    </tr>
-
-    <tr>
-        <td>HP Printer</td>
-        <td>Printer</td>
-        <td>Admin Office</td>
-        <td><span class="badge bg-warning text-dark">Maintenance</span></td>
-    </tr>
-
-    <tr>
-        <td>Cisco Router</td>
-        <td>Networking Device</td>
-        <td>Server Room</td>
-        <td><span class="badge bg-success">Active</span></td>
-    </tr>
+                 <tbody id="dashboardTable">
 </tbody>
             </table>
 
         </div>
     </div>
 </div>
+<script>
+let assets = JSON.parse(localStorage.getItem("assets")) || [];
 
+// Update Total Assets
+document.getElementById("totalAssets").textContent = assets.length;
+
+// Display assets in the table
+let table = document.getElementById("dashboardTable");
+
+assets.forEach(function(asset){
+
+    table.innerHTML += `
+        <tr>
+            <td>${asset.assetName}</td>
+            <td>${asset.category}</td>
+            <td>${asset.location}</td>
+            <td><span class="badge bg-success">${asset.status}</span></td>
+        </tr>
+    `;
+
+});
+</script>
 </body>
 </html>

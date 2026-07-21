@@ -53,37 +53,68 @@ background:#084298;
 
 <h2>Add New ICT Asset</h2>
 
-<form>
+<form id="assetForm">
 
 <label>Asset Name</label>
-<input type="text" placeholder="Enter Asset Name">
-
+<input type="text" id="assetName" placeholder="Enter Asset Name" required>
 <label>Category</label>
-<select>
-<option>Computer</option>
-<option>Printer</option>
-<option>Router</option>
-<option>Switch</option>
-<option>Server</option>
+
+<select id="category">
+    <option>Computer</option>
+    <option>Printer</option>
+    <option>Router</option>
+    <option>Switch</option>
+    <option>Server</option>
 </select>
 
 <label>Serial Number</label>
-<input type="text" placeholder="Enter Serial Number">
+<input type="text" id="serialNumber" placeholder="Enter Serial Number" required>
 
 <label>Purchase Date</label>
-<input type="date">
+<input type="date" id="purchaseDate" required>
 
 <label>Warranty End Date</label>
-<input type="date">
+<input type="date" id="warrantyDate" required>
 
 <label>Location</label>
-<input type="text" placeholder="Asset Location">
+<input type="text" id="location" placeholder="Asset Location" required>
 
-<button>Add Asset</button>
+<button type="submit">Add Asset</button>
 
 </form>
 
 </div>
+<script>
+document.getElementById("assetForm").addEventListener("submit", function(e){
 
+    e.preventDefault();
+
+    // Get form values
+    const assetName = document.getElementById("assetName").value;
+    const category = document.getElementById("category").value;
+    const location = document.getElementById("location").value;
+
+    // Create asset object
+    const asset = {
+        assetName: assetName,
+        category: category,
+        location: location,
+        status: "Active"
+    };
+
+    // Get existing assets
+    let assets = JSON.parse(localStorage.getItem("assets")) || [];
+
+    // Add new asset
+    assets.push(asset);
+
+    // Save back to Local Storage
+    localStorage.setItem("assets", JSON.stringify(assets));
+
+    // Redirect to Asset List
+    window.location.href = "asset_list.html";
+
+});
+</script>
 </body>
 </html>
